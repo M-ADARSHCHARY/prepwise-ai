@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+:root {
+	--color-zinc-100: #f4f4f5;
+	--color-zinc-200: #e4e4e7;
+	--color-zinc-300: #d4d4d8;
+	--color-zinc-400: #a1a1aa;
+	--color-zinc-500: #71717a;
+	--color-zinc-600: #52525b;
+	--color-zinc-700: #3f3f46;
+	--color-zinc-800: #27272a;
+	--color-zinc-900: #18181b;
+	--color-zinc-950: #09090b;
+}
+
+html,
+body,
+#root {
+	min-height: 100%;
+}
+
+body {
+	background: #09090b;
+	color: #f4f4f5;
+	transition: background-color 180ms ease, color 180ms ease;
+}
+
+[data-theme='light'] {
+	--color-zinc-100: #27272a;
+	--color-zinc-200: #3f3f46;
+	--color-zinc-300: #52525b;
+	--color-zinc-400: #71717a;
+	--color-zinc-500: #71717a;
+	--color-zinc-600: #a1a1aa;
+	--color-zinc-700: #d4d4d8;
+	--color-zinc-800: #e4e4e7;
+	--color-zinc-900: #f4f4f5;
+	--color-zinc-950: #ffffff;
+}
+
+[data-theme='light'] body {
+	background: #ffffff;
+	color: #27272a;
+}
+
+/* The app uses a few arbitrary dark surfaces in addition to Tailwind colors. */
+[data-theme='light'] [class*='bg-[#09090b]'] {
+	background-color: #ffffff !important;
+}
+
+[data-theme='light'] [class*='bg-[#0c0c0e]'] {
+	background-color: #f4f4f5 !important;
+}
+
+[data-theme='light'] [class*='bg-[#111114]'],
+[data-theme='light'] [class*='bg-[#111113]'],
+[data-theme='light'] [class*='bg-[#121215]'] {
+	background-color: #fafafa !important;
+}
+
+[data-theme='light'] [class*='bg-[#18181b]'],
+[data-theme='light'] [class*='bg-[#141416]'] {
+	background-color: #f4f4f5 !important;
+}
+
+[data-theme='light'] [class~='text-white']:not([class*='bg-blue-']):not([class*='bg-red-']):not([class*='bg-yellow-']) {
+	color: #27272a !important;
+}
+
+[data-theme='light'] button:not([class*='bg-blue-']):not([class*='bg-red-']):not([class*='bg-yellow-']),
+[data-theme='light'] a[class*='border-zinc'] {
+	border-color: #d4d4d8;
+}
+
+[data-theme='light'] input,
+[data-theme='light'] textarea,
+[data-theme='light'] select {
+	border-color: #d4d4d8 !important;
+	background-color: #ffffff !important;
+	color: #27272a !important;
+}
+
+[data-theme='light'] input::placeholder,
+[data-theme='light'] textarea::placeholder {
+	color: #a1a1aa !important;
+}
+
+[data-theme='light'] button:focus-visible,
+[data-theme='light'] a:focus-visible,
+[data-theme='light'] input:focus,
+[data-theme='light'] textarea:focus,
+[data-theme='light'] select:focus {
+	outline: 2px solid #2563eb;
+	outline-offset: 2px;
+}
+
+[data-theme='light'] [class*='bg-[radial-gradient'] {
+	background-image: radial-gradient(circle at center, #ffffff, #ffffff) !important;
+}
+
+[data-theme='light'] .theme-toggle {
+	border-color: #d4d4d8;
+	background: #18181b;
+	color: #ffffff;
+}
+
+[data-theme='dark'] .theme-toggle {
+	border-color: #3f3f46;
+	background: #f4f4f5;
+	color: #18181b;
+}
